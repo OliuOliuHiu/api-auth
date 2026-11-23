@@ -6,6 +6,7 @@ services:
       - "8001:8000"
     volumes:
       - ./app:/app/app
+      - ./keys:/app/keys:ro
     command:
       - uvicorn
       - app.main:app
@@ -25,6 +26,7 @@ services:
       - "8002:8000"
     volumes:
       - ./app:/app/app
+      - ./keys/public.pem:/app/keys/public.pem:ro
     command:
       - uvicorn
       - app.main:app
